@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="directoryApp">
+<head>
+	<title>AngularJS starter app</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+	<script src="directory3.js"></script>
+</head>
+<body ng-controller="directoryController as dirList">
+	<input type="text" ng-model="search_keyword">
+	<ul>
+		<li ng-repeat="item in dirList.list | filter:search_keyword">
+			{{item.name}} - {{item.age}}
+		</li>
+	</ul>
+	<form ng-submit="dirList.addPerson()">
+		<input type="text" ng-model="dirList.name">
+		<input type="text" ng-model="dirList.age">
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
