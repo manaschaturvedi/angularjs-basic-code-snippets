@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="directoryApp">
+<head>
+	<title>AngularJS starter app</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+	<script src="directory3.js"></script>
+	<style>
+		.over-thirty
+		{
+			color:red;
+		}
+		.under-thirty
+		{
+			color:blue;
+		}
+		.hidden
+		{
+			display:none;
+		}
+	</style>
+</head>
+<body ng-controller="directoryController as dirList">
+	<input type="text" ng-model="search_keyword">
+	<ul ng-class="{'hidden':!dirList.toggle}">
+		<li ng-repeat="item in dirList.list | filter:search_keyword"
+				ng-class="item.age > 30 ? 'over-thirty' : 'under-thirty'">
+			{{item.name}} - {{item.age}}
+		</li>
+	</ul>
+	<button ng-click="dirList.toggle=true">Show names</button>
+	<form ng-submit="dirList.addPerson()">
+		<input type="text" ng-model="dirList.name">
+		<input type="text" ng-model="dirList.age">
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
