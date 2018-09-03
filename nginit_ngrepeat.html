@@ -1,0 +1,14 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<title>AngularJS starter app</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+<body ng-init="list=[{'name':'Manas',age:25},{'name':'Pentagon Jr.','age':32}]">
+	<ul>
+		<li ng-repeat="item in list">
+			{{item.name}} - {{item.age}}
+		</li>
+	</ul>
+</body>
+</html>

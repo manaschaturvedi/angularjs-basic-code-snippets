@@ -1,0 +1,16 @@
+<!doctype html>
+<html ng-app="directoryApp">
+<head>
+	<title>AngularJS starter app</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+	<script src="directory.js"></script>
+</head>
+<body ng-controller="directoryController">
+	<input type="text" ng-model="search_keyword">
+	<ul>
+		<li ng-repeat="item in list | filter:search_keyword">
+			{{item.name}} - {{item.age}}
+		</li>
+	</ul>
+</body>
+</html>
