@@ -2,8 +2,8 @@ angular.module('directoryApp',[])
 	.controller('directoryController',function()
 	{
 		var dirList = this;
-		dirList.list = [{'name':'Manas',age:25},{'name':'Pentagon Jr.','age':32},
-							{'name':'Santana',age:21}];
+		dirList.list = [{'name':'Manas','age':25},{'name':'Pentagon Jr.','age':32},
+							{'name':'Santana','age':21}];
 
 		dirList.addPerson = function()
 		{
